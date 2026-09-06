@@ -1,8 +1,11 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { CategoryCard } from '@/components/CategoryCard';
 import { ProductCard } from '@/components/ProductCard';
 import { SectionTitle } from '@/components/SectionTitle';
 import { business, categories, products } from '@/lib/site';
+
+const homeCategories = categories.slice(0, 5);
 
 const popularProducts = [
   {
@@ -36,8 +39,6 @@ const popularProducts = [
   },
 ];
 
-const homeCategories = categories.slice(0, 5);
-
 const galleryPreview = [
   '/Products/WhatsApp Image 2026-09-04 at 11.14.04 AM.jpeg',
   '/Products/WhatsApp Image 2026-09-04 at 11.14.041 AM.jpeg',
@@ -47,9 +48,9 @@ const galleryPreview = [
 ];
 
 const trustItems = [
-  { icon: '🏆', label: 'Premium Quality', sub: 'Built to last' },
-  { icon: '🌍', label: 'Global Supply',   sub: 'Bulk ready' },
-  { icon: '🤝', label: 'Trusted Partner', sub: 'Direct support' },
+  { icon: 'quality', label: 'Premium Quality', sub: 'Built to last' },
+  { icon: 'supply', label: 'Global Supply',   sub: 'Bulk ready' },
+  { icon: 'partner', label: 'Trusted Partner', sub: 'Direct support' },
 ];
 
 const stats = [
@@ -60,10 +61,10 @@ const stats = [
 ];
 
 const whyItems = [
-  { icon: '🏆', title: 'Premium Quality',     desc: 'Finest materials and superior craftsmanship.' },
-  { icon: '🌐', title: 'Worldwide Supply',    desc: 'Serving customers across India and beyond.' },
-  { icon: '🚚', title: 'Reliable Partner',    desc: 'Consistent quality and timely delivery.' },
-  { icon: '📦', title: 'Wide Product Range', desc: 'A complete textile solution under one roof.' },
+  { icon: 'quality', title: 'Premium Quality',     desc: 'Finest materials and superior craftsmanship.' },
+  { icon: 'supply', title: 'Worldwide Supply',    desc: 'Serving customers across India and beyond.' },
+  { icon: 'reliable', title: 'Reliable Partner',    desc: 'Consistent quality and timely delivery.' },
+  { icon: 'range', title: 'Wide Product Range', desc: 'A complete textile solution under one roof.' },
 ];
 
 export default function Home() {
@@ -82,13 +83,17 @@ export default function Home() {
           <p>Manufacturer &amp; Supplier of Premium Towels, Gamchas, Aprons &amp; More — direct from Meerut.</p>
           <div className="hero-actions">
             <Link className="primary-btn" href="/shop">
-              View Our Products →
+              View Our Products
             </Link>
+            <a className="secondary-btn" href={`tel:+91${business.phone}`}>
+              <Image src="/call-icon.png" alt="" width={18} height={18} />
+              Call Now
+            </a>
           </div>
           <div className="hero-trust-row">
             {trustItems.map((item) => (
               <div key={item.label}>
-                <b aria-hidden="true">{item.icon}</b>
+                <b className={`feature-icon icon-${item.icon}`} aria-hidden="true" />
                 <span>
                   <strong>{item.label}</strong>
                   {item.sub}
@@ -136,18 +141,12 @@ export default function Home() {
             </p>
           </div>
           <Link className="outline-btn" href="/shop">
-            Browse All →
+            Browse All
           </Link>
         </div>
         <div className="category-grid category-grid-home">
           {homeCategories.map((cat) => (
-            <article className="category-card" key={cat.name}>
-              <div className="category-image">
-                <Image src={cat.image} alt={cat.name} fill sizes="(max-width: 640px) 45vw, 220px" />
-              </div>
-              <h3>{cat.name}</h3>
-              <p>{cat.description}</p>
-            </article>
+            <CategoryCard category={cat} key={cat.name} />
           ))}
         </div>
       </section>
@@ -162,7 +161,7 @@ export default function Home() {
             </p>
           </div>
           <Link className="outline-btn" href="/shop">
-            View All →
+            View All
           </Link>
         </div>
         <div className="product-grid popular-grid">
@@ -178,12 +177,12 @@ export default function Home() {
           <span>Why Choose JF World Trading</span>
           <h2>Your Trusted Textile Partner</h2>
           <p>We deliver quality textile products with dependable supply, practical pricing and direct support for every order.</p>
-          <Link className="partner-link" href="/about">Know More About Us →</Link>
+          <Link className="partner-link" href="/about">Know More About Us</Link>
         </div>
         <div className="partner-benefits">
           {whyItems.map((item) => (
             <div className="partner-benefit" key={item.title}>
-              <b aria-hidden="true">{item.icon}</b>
+              <b className={`feature-icon icon-${item.icon}`} aria-hidden="true" />
               <span>
                 <strong>{item.title}</strong>
                 <span>{item.desc}</span>
@@ -216,7 +215,7 @@ export default function Home() {
             <li>Customer-focused service</li>
             <li>Ethical business practices</li>
           </ul>
-          <Link className="primary-btn" href="/about">Learn More About Us →</Link>
+          <Link className="primary-btn" href="/about">Learn More About Us</Link>
         </div>
         <div className="about-stack-image">
           <Image src="/hero-textile-range.png" alt="Stacked textile products" fill sizes="300px" />
@@ -246,7 +245,7 @@ export default function Home() {
           <div>
             <h2>Looking for Bulk Orders?</h2>
             <p>We supply the best quality textile products at the best prices — directly from our factory.</p>
-            <Link className="secondary-btn" href="/contact">Get In Touch →</Link>
+            <Link className="secondary-btn" href="/contact">Get In Touch</Link>
           </div>
           <Image src="/Products/WhatsApp Image 2026-09-04 at 11.14.02 AM.jpeg" alt="Bulk gamcha order" fill sizes="260px" />
         </article>

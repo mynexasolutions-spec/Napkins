@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
 import { business } from '@/lib/site';
@@ -106,7 +107,7 @@ export function Header() {
         <div className="header-actions">
           {/* Phone pill — desktop */}
           <a className="phone-pill" href={`tel:+91${business.phone}`}>
-            <span aria-hidden="true">📞</span>
+            <span aria-hidden="true"><Image src="/call-icon.png" alt="" width={18} height={18} /></span>
             <span>
               <span>{business.owner}</span>
               <strong>{business.phone}</strong>
@@ -148,7 +149,7 @@ export function Header() {
                 style={{ marginTop: 8, paddingTop: 12, borderTop: '1px solid var(--line)', color: 'var(--teal)', fontWeight: 700 }}
                 href={`tel:+91${business.phone}`}
               >
-                📞 {business.phone}
+                {business.phone}
               </a>
             </nav>
           </div>

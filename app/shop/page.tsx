@@ -1,6 +1,7 @@
+import { CategoryCard } from '@/components/CategoryCard';
 import { ProductCard } from '@/components/ProductCard';
 import { SectionTitle } from '@/components/SectionTitle';
-import { products, whatsappUrl } from '@/lib/site';
+import { categories, products, whatsappUrl } from '@/lib/site';
 
 export default function ShopPage() {
   return (
@@ -17,6 +18,22 @@ export default function ShopPage() {
         </div>
       </section>
 
+      <section className="section category-section catalogue-categories">
+        <div className="section-head-row">
+          <div>
+            <SectionTitle eyebrow="Product Categories" title="Explore Our Supply Range" />
+            <p className="home-section-intro">
+              Find textile products and industrial commodities for regular, bulk and infrastructure requirements.
+            </p>
+          </div>
+        </div>
+        <div className="category-grid product-category-grid">
+          {categories.map((category) => (
+            <CategoryCard category={category} key={category.name} />
+          ))}
+        </div>
+      </section>
+
       <section className="section catalogue-section">
         <div className="section-head-row">
           <SectionTitle eyebrow="Product Catalogue" title="Available Products" />
@@ -28,7 +45,7 @@ export default function ShopPage() {
             target="_blank"
             rel="noreferrer"
           >
-            Ask Bulk Rates →
+            Ask Bulk Rates
           </a>
         </div>
         <p className="catalogue-note">

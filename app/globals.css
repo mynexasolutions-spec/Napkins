@@ -393,6 +393,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
   font-size: 14px;
   font-weight: 700;
 }
+.hero-actions .secondary-btn { border-radius: 999px; }
 
 .hero-trust-row {
   display: flex;
@@ -430,6 +431,53 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
   border-radius: 50%;
   font-size: 14px;
   flex-shrink: 0;
+}
+.feature-icon::before,
+.feature-icon::after {
+  content: '';
+  position: absolute;
+  display: block;
+}
+.feature-icon { position: relative; }
+.icon-quality::before {
+  width: 10px; height: 10px;
+  border: 2px solid currentColor;
+  transform: rotate(45deg);
+}
+.icon-supply::before {
+  width: 15px; height: 15px;
+  border: 1.5px solid currentColor;
+  border-radius: 50%;
+}
+.icon-supply::after {
+  width: 17px; height: 1.5px;
+  background: currentColor;
+  box-shadow: 0 -5px 0 -0.25px currentColor, 0 5px 0 -0.25px currentColor;
+}
+.icon-partner::before,
+.icon-partner::after {
+  width: 10px; height: 10px;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+}
+.icon-partner::before { transform: translateX(-4px); }
+.icon-partner::after { transform: translateX(4px); }
+.icon-reliable::before {
+  width: 16px; height: 11px;
+  border: 2px solid currentColor;
+  border-radius: 2px;
+}
+.icon-reliable::after {
+  width: 4px; height: 4px;
+  border-radius: 50%;
+  background: currentColor;
+  box-shadow: 9px 0 currentColor;
+  transform: translateY(9px);
+}
+.icon-range::before {
+  width: 15px; height: 15px;
+  border: 2px solid currentColor;
+  background: linear-gradient(90deg, transparent 42%, currentColor 42%, currentColor 58%, transparent 58%), linear-gradient(0deg, transparent 42%, currentColor 42%, currentColor 58%, transparent 58%);
 }
 .hero-trust-row span { display: grid; gap: 2px; font-size: 11px; }
 .hero-trust-row strong { color: var(--ink); font-size: 12px; font-weight: 700; display: block; }
@@ -559,6 +607,8 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 .category-grid-home { grid-template-columns: repeat(5, 1fr); }
 
 .category-card {
+  display: flex;
+  flex-direction: column;
   background: var(--white);
   border: 1px solid var(--line);
   border-radius: var(--radius-md);
@@ -597,6 +647,26 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
   font-size: 12.5px;
   line-height: 1.5;
 }
+.category-card-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start;
+  margin: auto 15px 16px;
+  padding: 9px 14px;
+  background: var(--teal);
+  color: var(--white);
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  font-weight: 700;
+  transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+}
+.category-card-cta:hover {
+  background: var(--teal-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+.product-category-grid { grid-template-columns: repeat(3, 1fr); }
 
 /* Hover lift shadow on image */
 .category-card:hover::after {
@@ -1476,6 +1546,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
   .section-title h2 { font-size: 32px; }
 
   .category-grid-home { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .product-category-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
   .popular-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
   .popular-section { padding: 60px 16px; }
   .shop-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
@@ -1839,9 +1910,19 @@ textarea:focus-visible {
 }
 
 @media (max-width: 640px) {
-  .hero-actions > * { flex: 1 1 100%; }
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .hero-actions > * {
+    width: 100%;
+  }
   .hero-actions .primary-btn,
-  .hero-actions .secondary-btn { width: 100%; }
+  .hero-actions .secondary-btn {
+    width: 100%;
+    font-size: 12px;
+    white-space: nowrap;
+  }
   .category-card > h3 { margin-top: 12px; }
   .product-copy { padding: 14px; }
   .product-card-compact .product-copy a { min-height: 36px; }
@@ -1969,16 +2050,17 @@ textarea:focus-visible {
 }
 
 .hero-actions .primary-btn {
-  min-width: 220px;
-  justify-content: space-between;
-  padding-right: 24px;
-  padding-left: 30px;
+  min-width: 0;
+  justify-content: center;
+  padding-right: 26px;
+  padding-left: 26px;
   background: linear-gradient(135deg, #075b87, #056e9b);
   border-radius: 999px;
   box-shadow: 0 9px 18px rgba(7, 91, 135, .2);
 }
 
 .hero-actions .secondary-btn {
+  border-radius: 999px;
   border-color: #68a9cb;
   box-shadow: none;
 }

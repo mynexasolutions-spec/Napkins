@@ -36,7 +36,7 @@ export default function ContactPage() {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  Chat on WhatsApp →
+                  Chat on WhatsApp
                 </a>
               </span>
             </div>
@@ -83,7 +83,7 @@ export default function ContactPage() {
             target="_blank"
             rel="noreferrer"
           >
-            💬 Send on WhatsApp
+            Send on WhatsApp
           </a>
         </form>
       </section>

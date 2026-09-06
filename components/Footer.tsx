@@ -16,7 +16,7 @@ export function Footer() {
           target="_blank"
           rel="noreferrer"
         >
-          Start WhatsApp Enquiry →
+          Start WhatsApp Enquiry
         </a>
       </div>
 
@@ -55,7 +55,7 @@ export function Footer() {
             target="_blank"
             rel="noreferrer"
           >
-            💬 WhatsApp Enquiry →
+            WhatsApp Enquiry
           </a>
           <p>{business.address}</p>
         </div>

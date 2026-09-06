@@ -29,7 +29,7 @@ export function ProductCard({ product, compact = false }: ProductCardProps) {
         <h3>{product.name}</h3>
         {!compact && <p>{product.description}</p>}
         <a href={whatsappUrl(message)} target="_blank" rel="noreferrer">
-          {compact ? 'Enquire →' : 'Buy on WhatsApp →'}
+          {compact ? 'Enquire' : 'Buy on WhatsApp'}
         </a>
       </div>
     </article>
