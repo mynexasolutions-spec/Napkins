@@ -1,9 +1,8 @@
-import Image from "next/image";
 import type { Metadata } from "next";
 import "./globals.css";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
-import { business } from "@/lib/site";
+import { FloatingActions } from "@/components/FloatingActions";
 
 export const metadata: Metadata = {
   title: "JF World Trading | Napkins, Towels & Cleaning Cloths",
@@ -20,15 +19,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <body>
         <Header />
         <main>{children}</main>
-        <a
-          className="floating-whatsapp"
-          href={`https://wa.me/${business.phoneIntl}`}
-          target="_blank"
-          rel="noreferrer"
-          aria-label="Chat on WhatsApp"
-        >
-          <Image src="/whatsapp_icon.png" alt="" width={56} height={56} priority />
-        </a>
+        <FloatingActions />
         <Footer />
       </body>
     </html>
