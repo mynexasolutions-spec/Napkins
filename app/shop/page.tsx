@@ -23,7 +23,7 @@ export default function ShopPage() {
           <div>
             <SectionTitle eyebrow="Product Categories" title="Explore Our Supply Range" />
             <p className="home-section-intro">
-              Find textile products and industrial commodities for regular, bulk and infrastructure requirements.
+              Find textile products for regular and bulk supply requirements.
             </p>
           </div>
         </div>

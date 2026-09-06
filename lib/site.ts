@@ -29,13 +29,6 @@ const productsPath = "/Products/";
 
 export const categories: Category[] = [
   {
-    name: "Industrial Commodities / Bitumen",
-    description: "Supply of high-grade Bitumen (Penetration Grades / Industrial Bitumen) for infrastructure and industrial requirements.",
-    image: `${productsPath}WhatsApp Image 2026-09-04 at 12.35.52 PM.jpeg`,
-    ctaLabel: "Enquire Now",
-    enquiryMessage: "Hello JF World Trading, I want to enquire about Industrial Commodities / Bitumen. Please share grades, pricing and availability."
-  },
-  {
     name: "Towels",
     description: "Soft and absorbent towels for daily use.",
     image: "/hero-textile-range.png"
