@@ -40,11 +40,11 @@ const popularProducts = [
 ];
 
 const galleryPreview = [
+  '/imageposter1.jpeg',
+  '/imageposter2.jpeg',
   '/Products/WhatsApp Image 2026-09-04 at 11.14.04 AM.jpeg',
   '/Products/WhatsApp Image 2026-09-04 at 11.14.041 AM.jpeg',
-  '/Products/WhatsApp Image 2026-09-04 at 11.14.02 AM.jpeg',
   '/Products/WhatsApp Image 2026-09-04 at 12.35.573 PM.jpeg',
-  '/Products/WhatsApp Image 2026-09-04 at 12.36.044 PM.jpeg',
 ];
 
 const trustItems = [

@@ -145,6 +145,16 @@ export const products: Product[] = [
 
 export const galleryImages = [
   {
+    src: "/imageposter1.jpeg",
+    alt: "JF World Trading Poster Showcase 1",
+    isPoster: true
+  },
+  {
+    src: "/imageposter2.jpeg",
+    alt: "JF World Trading Poster Showcase 2",
+    isPoster: true
+  },
+  {
     src: `${productsPath}WhatsApp Image 2026-09-04 at 12.35.52 PM.jpeg`,
     alt: "Textile machine inside JF World Trading factory"
   },
